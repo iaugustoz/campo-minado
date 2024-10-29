@@ -13,6 +13,8 @@ Descrição em andamento...
 ---
 
 ## 💻 **Tecnologias Utilizadas**
+- Java (v17.0.5)
+- Spring Boot (v3.3.5)
 
 ---
 
