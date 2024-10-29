@@ -13,12 +13,17 @@ Descrição em andamento...
 ---
 
 ## 💻 **Tecnologias Utilizadas**
+
 - Java (v17.0.5)
 - Spring Boot (v3.3.5)
 
 ---
 
 ## 📦 **Dependências**
+
+- [JUnit Jupiter API](https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api) - para testes unitários
+- [Mockito](https://mvnrepository.com/artifact/org.mockito/mockito-core) - para mockar dependências
+- [Plugin JaCoCo](https://mvnrepository.com/artifact/org.jacoco/jacoco-maven-plugin) - para gerar relatórios dos testes unitários
 
 ---
 
