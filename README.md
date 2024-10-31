@@ -2,7 +2,8 @@
 
 ## 📜 **Descrição**
 
-Descrição em andamento...
+Esta API de Campo Minado foi desenvolvida em Java para fornecer uma interface para o clássico jogo de tabuleiro digital, permitindo operações típicas do jogo como abertura de células, marcação de minas e explosão de minas. A  arquitetura do projeto foi pensada para garantir flexibilidade e fácil manutenção.
+
 
 ---
 
