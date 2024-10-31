@@ -2,7 +2,8 @@
 
 ## 📜 **Descrição**
 
-Descrição em andamento...
+Esta API de Campo Minado foi desenvolvida em Java para fornecer uma interface para o clássico jogo de tabuleiro digital, permitindo operações típicas do jogo como abertura de células, marcação de minas e explosão de minas. A  arquitetura do projeto foi pensada para garantir flexibilidade e fácil manutenção.
+
 
 ---
 
@@ -13,12 +14,18 @@ Descrição em andamento...
 ---
 
 ## 💻 **Tecnologias Utilizadas**
+
 - Java (v17.0.5)
 - Spring Boot (v3.3.5)
 
 ---
 
 ## 📦 **Dependências**
+
+- [Lombok](https://mvnrepository.com/artifact/org.projectlombok/lombok) - para reduzir a quantidade de código repetitivo
+- [JUnit Jupiter API](https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api) - para testes unitários
+- [Mockito](https://mvnrepository.com/artifact/org.mockito/mockito-core) - para mockar dependências
+- [Plugin JaCoCo](https://mvnrepository.com/artifact/org.jacoco/jacoco-maven-plugin) - para gerar relatórios dos testes unitários
 
 ---
 
