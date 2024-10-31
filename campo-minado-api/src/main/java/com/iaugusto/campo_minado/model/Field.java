@@ -1,5 +1,7 @@
 package com.iaugusto.campo_minado.model;
 
+import com.iaugusto.campo_minado.exception.ExplosionException;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,5 +41,34 @@ public class Field {
             return false;
 
         }
+    }
+
+    public void toogleTag() {
+        if (!open) {
+            marked = !marked;
+        }
+    }
+
+    public boolean opened() {
+        if (!open && !marked) {
+            open = true;
+
+            if (mined) {
+                throw new ExplosionException();
+            }
+
+            if (safeNeighborhood()) {
+                neighbors.forEach(Field::opened);
+            }
+            return true;
+
+        } else {
+            return false;
+
+        }
+    }
+
+    public boolean safeNeighborhood() {
+        return neighbors.stream().noneMatch(v -> v.mined);
     }
 }
