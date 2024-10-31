@@ -20,7 +20,7 @@ public class Field {
         this.column = column;
     }
 
-    public boolean addNeighbors(Field neighbor) {
+     boolean addNeighbors(Field neighbor) {
         boolean differentLine = line != neighbor.line;
         boolean differentColumn = column != neighbor.column;
 
@@ -43,13 +43,13 @@ public class Field {
         }
     }
 
-    public void toogleTag() {
+    void toogleTag() {
         if (!open) {
             marked = !marked;
         }
     }
 
-    public boolean opened() {
+    boolean opened() {
         if (!open && !marked) {
             open = true;
 
@@ -68,7 +68,23 @@ public class Field {
         }
     }
 
-    public boolean safeNeighborhood() {
+    boolean safeNeighborhood() {
         return neighbors.stream().noneMatch(v -> v.mined);
+    }
+
+    void mine() {
+        mined = true;
+    }
+
+    public boolean isMarked() {
+        return marked;
+    }
+
+    public boolean isOpen() {
+        return open;
+    }
+
+    public boolean isClosed() {
+        return !isOpen();
     }
 }
