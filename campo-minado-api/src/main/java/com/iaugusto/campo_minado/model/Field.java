@@ -1,10 +1,14 @@
 package com.iaugusto.campo_minado.model;
 
 import com.iaugusto.campo_minado.exception.ExplosionException;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Getter
+@Setter
 public class Field {
 
     private final int line;
@@ -86,5 +90,36 @@ public class Field {
 
     public boolean isClosed() {
         return !isOpen();
+    }
+
+    boolean objectiveAchieved() {
+        boolean fieldUnveiled = !mined && open;
+        boolean fieldProtected = mined && marked;
+
+        return fieldUnveiled || fieldProtected;
+    }
+
+    long minesInTheNeighborhood() {
+        return neighbors.stream().filter(v -> v.mined).count();
+    }
+
+    void restart() {
+        open = false;
+        mined = false;
+        marked = false;
+    }
+
+    public String toString() {
+        if (marked) {
+            return "x";
+        } else if (open && mined) {
+            return "*";
+        } else if (open && minesInTheNeighborhood() > 0) {
+            return Long.toString(minesInTheNeighborhood());
+        } else if (open) {
+            return " ";
+        } else {
+            return "?";
+        }
     }
 }
