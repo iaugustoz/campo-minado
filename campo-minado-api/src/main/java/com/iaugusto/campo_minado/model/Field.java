@@ -1,14 +1,10 @@
 package com.iaugusto.campo_minado.model;
 
 import com.iaugusto.campo_minado.exception.ExplosionException;
-import lombok.Getter;
-import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Getter
-@Setter
 public class Field {
 
     private final int line;
@@ -19,12 +15,20 @@ public class Field {
     private boolean marked = false;
     private List<Field> neighbors = new ArrayList<>();
 
+    public int getColumn() {
+        return column;
+    }
+
+    public int getLine() {
+        return line;
+    }
+
     public Field(int line, int column) {
         this.line = line;
         this.column = column;
     }
 
-     boolean addNeighbors(Field neighbor) {
+    boolean addNeighbors(Field neighbor) {
         boolean differentLine = line != neighbor.line;
         boolean differentColumn = column != neighbor.column;
 
