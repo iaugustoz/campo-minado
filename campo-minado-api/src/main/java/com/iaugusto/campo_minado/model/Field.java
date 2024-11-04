@@ -15,12 +15,20 @@ public class Field {
     private boolean marked = false;
     private List<Field> neighbors = new ArrayList<>();
 
+    public int getColumn() {
+        return column;
+    }
+
+    public int getLine() {
+        return line;
+    }
+
     public Field(int line, int column) {
         this.line = line;
         this.column = column;
     }
 
-     boolean addNeighbors(Field neighbor) {
+    boolean addNeighbors(Field neighbor) {
         boolean differentLine = line != neighbor.line;
         boolean differentColumn = column != neighbor.column;
 
@@ -76,6 +84,10 @@ public class Field {
         mined = true;
     }
 
+    public boolean isMined() {
+        return mined;
+    }
+
     public boolean isMarked() {
         return marked;
     }
@@ -86,5 +98,36 @@ public class Field {
 
     public boolean isClosed() {
         return !isOpen();
+    }
+
+    boolean objectiveAchieved() {
+        boolean fieldUnveiled = !mined && open;
+        boolean fieldProtected = mined && marked;
+
+        return fieldUnveiled || fieldProtected;
+    }
+
+    long minesInTheNeighborhood() {
+        return neighbors.stream().filter(v -> v.mined).count();
+    }
+
+    void restart() {
+        open = false;
+        mined = false;
+        marked = false;
+    }
+
+    public String toString() {
+        if (marked) {
+            return "x";
+        } else if (open && mined) {
+            return "*";
+        } else if (open && minesInTheNeighborhood() > 0) {
+            return Long.toString(minesInTheNeighborhood());
+        } else if (open) {
+            return " ";
+        } else {
+            return "?";
+        }
     }
 }
