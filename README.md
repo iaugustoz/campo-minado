@@ -78,7 +78,3 @@ git push origin minha-contribuicao
 - [Instagram](https://www.instagram.com/iaugusto__/) | [Portfólio](https://iaugusto.vercel.app/) | [LinkedIn](https://www.linkedin.com/in/igorbrz/)
 
 ---
-
-## ⚠️ Aviso Importante
-
-Este projeto ainda está em desenvolvimento, portanto, algumas funcionalidades podem estar incompletas ou sujeitas a alterações. Se você encontrar algum bug, não hesite em abrir uma issue!
