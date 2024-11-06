@@ -42,6 +42,8 @@ git clone https://github.com/iaugustoz/campo-minado
 cd campo-minado
 ```
 
+3. **Execute a classe principal do projeto**
+
 ---
 
 ## 🤝 Contribuindo
