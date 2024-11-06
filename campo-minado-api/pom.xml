@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.iaugusto</groupId>
 	<artifactId>campo-minado</artifactId>
-	<version>1.4.1</version>
+	<version>1.4.2</version>
 	<name>campo-minado</name>
 	<description>Aplicação simples responsável por criar a lógica de um campo minado.</description>
 	<url/>
