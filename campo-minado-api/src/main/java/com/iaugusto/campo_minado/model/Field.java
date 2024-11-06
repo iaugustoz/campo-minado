@@ -92,6 +92,10 @@ public class Field {
         return marked;
     }
 
+    void setOpen(boolean open) {
+        this.open = open;
+    }
+
     public boolean isOpen() {
         return open;
     }
