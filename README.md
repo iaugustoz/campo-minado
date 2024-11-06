@@ -2,14 +2,13 @@
 
 ## 📜 **Descrição**
 
-Esta API de Campo Minado foi desenvolvida em Java para fornecer uma interface para o clássico jogo de tabuleiro digital, permitindo operações típicas do jogo como abertura de células, marcação de minas e explosão de minas. A  arquitetura do projeto foi pensada para garantir flexibilidade e fácil manutenção.
-
+Esta API de Campo Minado foi desenvolvida em Java para fornecer uma interface para o clássico jogo de tabuleiro digital, permitindo operações típicas do jogo como abertura de células, marcação de minas e explosão de minas. A arquitetura do projeto foi pensada para garantir flexibilidade e fácil manutenção.
 
 ---
 
 ## 🚀 **Status do Projeto**
 
-⚙️ Projeto em andamento...
+✅ Projeto concluído.
 
 ---
 
@@ -43,6 +42,8 @@ git clone https://github.com/iaugustoz/campo-minado
 cd campo-minado
 ```
 
+3. **Execute a classe principal do projeto**
+
 ---
 
 ## 🤝 Contribuindo
@@ -75,9 +76,3 @@ git push origin minha-contribuicao
 - Igor Augusto
 - 📧 E-mail: iaugustodeveloper@gmail.com
 - [Instagram](https://www.instagram.com/iaugusto__/) | [Portfólio](https://iaugusto.vercel.app/) | [LinkedIn](https://www.linkedin.com/in/igorbrz/)
-
----
-
-## ⚠️ Aviso Importante
-
-Este projeto ainda está em desenvolvimento, portanto, algumas funcionalidades podem estar incompletas ou sujeitas a alterações. Se você encontrar algum bug, não hesite em abrir uma issue!
