@@ -1,5 +1,7 @@
 package com.iaugusto.campo_minado.model;
 
+import com.iaugusto.campo_minado.exception.ExplosionException;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
@@ -23,10 +25,16 @@ public class Board {
     }
 
     public void open(int line, int column) {
-        fields.parallelStream()
-                .filter(f -> f.getLine() == line && f.getColumn() == column)
-                .findFirst()
-                .ifPresent(f ->  f.opened());
+        try {
+            fields.parallelStream()
+                    .filter(f -> f.getLine() == line && f.getColumn() == column)
+                    .findFirst()
+                    .ifPresent(f -> f.opened());
+
+        } catch (ExplosionException e) {
+            fields.forEach(f -> f.setOpen(true));
+            throw e;
+        }
     }
 
     public void mark(int line, int column) {
@@ -46,8 +54,8 @@ public class Board {
     }
 
     private void associateNeighbors() {
-        for (Field f1: fields) {
-            for (Field f2: fields) {
+        for (Field f1 : fields) {
+            for (Field f2 : fields) {
                 f1.addNeighbors(f2);
             }
         }
@@ -58,9 +66,9 @@ public class Board {
         Predicate<Field> mined = f -> f.isMined();
 
         do {
-            armedMines = fields.stream().filter(mined).count();
             int random = (int) (Math.random() * fields.size());
             fields.get(random).mine();
+            armedMines = fields.stream().filter(mined).count();
 
         } while (armedMines < mines);
     }
